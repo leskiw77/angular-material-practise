@@ -1,0 +1,11 @@
+<mat-card class="song-info-card">
+
+  <app-editable-label [label]="'Title'" [content]="song.songInfo.title"
+    (contentChangedEmitter)="changeTitle($event)"
+  ></app-editable-label>
+
+  <app-editable-label [label]="'Display Name'" [content]="song.songInfo.displayName"
+                      (contentChangedEmitter)="changeDisplayName($event)"
+  ></app-editable-label>
+
+</mat-card>
