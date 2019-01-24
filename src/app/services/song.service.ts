@@ -9,12 +9,6 @@ import { Observable, Subject } from 'rxjs';
 @Injectable()
 export class SongService {
 
-  /**
-   * @type {Subject<SongId>}
-   * store information about currently displayed song
-   */
-  private songSubject = new Subject<SongId>();
-
   constructor(private dbSongsService: DbSongsService) { }
 
   getAllDisplayNames(): Observable<Title[]> {
@@ -28,14 +22,12 @@ export class SongService {
       }));
   }
 
-  setSong(id: string) {
-    this.dbSongsService.getSong(id).subscribe(song => {
-      this.songSubject.next({id, ...song} as SongId);
-    });
-  }
-
-  getSong(): Observable<SongId> {
-    return this.songSubject.asObservable();
+  getSongById(id: string): Observable<SongId> {
+    return this.dbSongsService.getSong(id).pipe(
+      map(e => {
+        return {id, ...e} as SongId;
+      })
+    );
   }
 
   addTestSongs() {
@@ -48,5 +40,9 @@ export class SongService {
 
   updateDisplayName(songId: string, value: string) {
     this.dbSongsService.updateDisplayName(songId, value);
+  }
+
+  updateText(songId: string, value: string) {
+    this.dbSongsService.updateText(songId, value);
   }
 }

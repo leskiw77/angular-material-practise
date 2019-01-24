@@ -1,0 +1,14 @@
+<ng-container *ngIf="!song; else songExists">
+  <app-no-content></app-no-content>
+</ng-container>
+
+<ng-template id="wrapper" #songExists>
+  <mat-tab-group animationDuration="0ms" id="tab-group">
+    <mat-tab label="Info">
+      <app-info [song]="song"></app-info>
+    </mat-tab>
+    <mat-tab label="Text">
+      <app-text [song]="song"></app-text>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>

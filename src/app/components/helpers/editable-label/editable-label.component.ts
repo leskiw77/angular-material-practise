@@ -28,7 +28,6 @@ export class EditableLabelComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log("result: "+ result);
         this.contentChangedEmitter.emit(result);
       }
     });

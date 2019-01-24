@@ -1,0 +1,79 @@
+<!--<ng-container *ngIf="!editMode; else textEditor">-->
+  <!--{{song.text}}-->
+
+<!--</ng-container>-->
+
+<!--<ng-template #textEditor>-->
+  <div class="edit-text">
+    <mat-form-field class="form-field" >
+    <textarea class="text-area"
+              [formControl]="textFormControl"
+              [value]="song.text"
+              matInput
+              matTextareaAutosize matAutosizeMinRows="4"
+              placeholder="{{song.songInfo.title}}"></textarea>
+    </mat-form-field>
+
+    <div class="buttons-section">
+      <button mat-mini-fab color="primary" [disabled]="!editMode"  (click)="saveText()">
+        <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn" [disabled]="!editMode" (click)="dropEditing()">
+        <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary" [disabled]="editMode" (click)="startEditing()">
+        <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+      </button>
+    </div>
+  </div>
+
+<!--</ng-template>-->
+
+
+<!--<pre>-->
+  <!--Lorem ipsum dolor sit amet, consectetur-->
+  <!--adipiscing elit. Morbi justo nulla, pharetra-->
+  <!--vitae elit nec, lobortis rutrum sem. Donec-->
+  <!--iaculis dapibus interdum. Mauris et condimentum-->
+  <!--est. Mauris malesuada dictum viverra. Class-->
+  <!--aptent taciti sociosqu ad litora torquent-->
+  <!--per conubia nostra, per inceptos himenaeos.-->
+  <!--Aenean augue leo, sodales a ultrices sed,-->
+  <!--cursus vel dolor. Fusce tincidunt semper-->
+  <!--pharetra. Nunc a libero nec justo dapibus-->
+  <!--scelerisque. Vivamus at est sit amet quam-->
+  <!--rutrum molestie in in augue. Sed nulla erat,-->
+  <!--commodo non tortor at, consequat malesuada libero.-->
+  <!--Nullam et sagittis urna, a eleifend ligula.-->
+
+<!--Etiam venenatis massa sit amet massa elementum,-->
+  <!--ullamcorper laoreet velit euismod. Nulla rutrum-->
+  <!--ipsum justo. Nulla imperdiet, ligula in lacinia-->
+  <!--commodo, erat nunc egestas orci, congue hendrerit-->
+  <!--purus neque id arcu. Vestibulum ante ipsum primis-->
+  <!--in faucibus orci luctus et ultrices posuere cubilia-->
+  <!--Curae; Nulla at mi eu ipsum dictum tempor. Sed-->
+  <!--lobortis ligula arcu, ac dapibus odio semper-->
+  <!--in. Maecenas vulputate massa id purus congue,-->
+  <!--vitae malesuada tellus vulputate. Nulla sit amet-->
+  <!--eros suscipit, elementum velit imperdiet, tristique-->
+  <!--massa. Integer vitae mauris placerat, efficitur enim-->
+  <!--nec, consectetur urna. Duis placerat erat vestibulum-->
+  <!--, tempus felis quis, euismod lorem.-->
+
+<!--Maecenas eu dignissim ipsum, sed mattis nunc.-->
+  <!--Vivamus faucibus tellus non facilisis egestas.-->
+  <!--Ut ut nisl sit amet ante ornare ultrices id quis-->
+  <!--tortor. Vestibulum sodales, lacus eu tristique vulputate-->
+  <!--, purus metus maximus dolor, quis tincidunt lorem nibh id-->
+  <!--tellus. Donec a euismod sem. Aenean malesuada libero a nunc-->
+  <!--commodo fermentum. Phasellus at odio justo. Donec ullamcorper-->
+  <!--venenatis dictum. Nunc purus mi, pretium id velit ut, porttitor-->
+  <!--rutrum turpis. Vestibulum ultricies dolor et neque aliquam tempor-->
+  <!--vel ac lectus. Donec bibendum consectetur dui, ut egestas lacus-->
+  <!--ultricies ut. Nullam at metus eget urna semper tempus.-->
+  <!--Interdum et malesuada fames ac ante ipsum primis in faucibus.-->
+  <!--Orci varius natoque penatibus et magnis dis parturient montes,-->
+  <!--nascetur ridiculus mus. Morbi finibus rutrum tortor, eget faucibus-->
+  <!--dolor. Sed finibus imperdiet odio, non suscipit tortor tempor vitae.-->
+<!--</pre>-->

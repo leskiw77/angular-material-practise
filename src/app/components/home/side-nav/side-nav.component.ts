@@ -19,12 +19,7 @@ export class SideNavComponent implements OnInit {
     });
   }
 
-  click(id: string) {
-    this.songService.setSong(id);
-  }
-
-  addTestSongs(){
+  addTestSongs() {
     this.songService.addTestSongs();
   }
-
 }

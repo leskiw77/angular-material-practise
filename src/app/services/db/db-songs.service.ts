@@ -64,8 +64,13 @@ export class DbSongsService implements OnInit {
   updateDisplayName(songId: string, value: string) {
     this.afs.collection('songs').doc(songId).update({
       'songInfo.displayName': value
-    }).then(r => console.log(r))
-      .catch(e => console.error(e));
+    }).catch(e => console.error(e));
+  }
+
+  updateText(songId: string, value: string) {
+    this.afs.collection('songs').doc(songId).update({
+      'text': value
+    }).catch(e => console.error(e));
   }
 
   addTestSongs() {

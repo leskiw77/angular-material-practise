@@ -1,7 +1,9 @@
 <h1 mat-dialog-title>Do you want to change {{data.label}}?</h1>
 <form>
   <mat-form-field class="full-width">
-    <input [maxlength]="40" matInput placeholder="{{ data.content }}"
+    <input [maxlength]="40" matInput
+           value="{{ data.content }}"
+           placeholder="{{ data.label }}"
            [formControl]="inputFormControl">
     <mat-error *ngIf="inputFormControl.hasError('required')">
       {{data.label}} is <strong>required</strong>
@@ -12,7 +14,7 @@
     <button class="button" [disabled]="inputFormControl.invalid"
             mat-raised-button color="primary"
             [mat-dialog-close]="inputFormControl.value"
-    >Ok</button>
+    >Yes</button>
 
     <button class="button" mat-raised-button (click)="onNoClick()">No</button>
   </div>

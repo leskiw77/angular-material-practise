@@ -5,7 +5,7 @@
       [opened]="!(isHandset$ | async)">
     <app-side-nav></app-side-nav>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content fixedInViewport="true" class="sidenav-content">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -17,6 +17,6 @@
       </button>
       <!--<span>front-end</span>-->
     </mat-toolbar>
-    <app-main-nav></app-main-nav>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
